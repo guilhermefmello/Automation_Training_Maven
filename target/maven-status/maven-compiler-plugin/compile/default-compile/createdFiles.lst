@@ -1,5 +1,0 @@
-qa\pages\HomePage.class
-qa\pages\SearchPage.class
-qa\util\TestUtil.class
-qa\libs\TestBase.class
-qa\pages\LoginPage.class
