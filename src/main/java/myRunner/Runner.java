@@ -7,7 +7,7 @@ import cucumber.api.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		features = "C:\\Users\\66578\\eclipse-workspace\\UKFT\\src\\main\\java\\Features\\startUKCWF.feature" //the path of feature files
+		features = "C:\\Users\\Destino Dublin\\eclipse-workspace\\Automation_Training_Web_UI_1\\src\\main\\java\\features" //the path of feature files
 		,glue= {"stepDefinitions"}, //the path of step definitions files
 		plugin = {
 				"html:target/cucumber-reports", "pretty",
