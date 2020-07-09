@@ -6,6 +6,10 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.CapabilityType;
+import org.openqa.selenium.remote.DesiredCapabilities;
+
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -13,14 +17,22 @@ import cucumber.api.java.en.When;
 
 public class Scenario_1_Step_Definition {
 
-	WebDriver driver;
+	 WebDriver driver;
 
 	// User is on Saucedemo Demo Website UI
 	@Given("^that the user is already on the saucedemo Login Page$")
 	public void user_already_on_login_page() {
 
+		//handling certificate errors (Untrusted Certificate)
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("--ignore-certificate-errors");
+				
+				
+		//Setting the Driver path
 		System.setProperty("webdriver.chrome.driver", "C:\\Automation_Software\\chromedriver_win32\\chromedriver.exe");
-		driver = new ChromeDriver();
+		
+		//Open Browser with capability
+		driver = new ChromeDriver(options);
 		driver.get("https://www.saucedemo.com/");
 	}
 
